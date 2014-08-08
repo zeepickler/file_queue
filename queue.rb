@@ -1,5 +1,3 @@
-require 'json'
-class Queue
 	@@master_queue_dir = "./queue"
 
 	# queue actions
@@ -58,17 +56,20 @@ class Queue
 	end
 end
 
-msg = {'a' => 1}
+##############
+# Example
 
-start = Time.now
-@qp = Queue.new("hash_queue","produce")
-1000.times{ @qp.push msg } 
-puts "Push took: #{Time.now - start}" # 0.118564 
+# msg = {'a' => 1}
 
-start = Time.now
-@qc = Queue.new("hash_queue","consume")
-1000.times{ @qc.pull }
-puts "Pull took: #{Time.now - start}" # 31.378936
+# start = Time.now
+# @qp = Queue.new("hash_queue","produce")
+# 1000.times{ @qp.push msg } 
+# puts "Push took: #{Time.now - start}" # 0.118564 
+
+# start = Time.now
+# @qc = Queue.new("hash_queue","consume")
+# 1000.times{ @qc.pull }
+# puts "Pull took: #{Time.now - start}" # 31.378936
 
 
 
